@@ -23,5 +23,6 @@ class UI {
                 })
 
             })
+            .catch(error => console.log(error));
     }
 }
