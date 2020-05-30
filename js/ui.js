@@ -10,5 +10,8 @@ class UI {
 
     printCategories() {
         const categoriesList = eventbrite.getCategoriesAPI()
+            .then(categories => {
+                console.log(categories);
+            })
     }
 }
