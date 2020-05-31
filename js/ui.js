@@ -25,4 +25,26 @@ class UI {
             })
             .catch(error => console.log(error));
     }
+
+    printMessage(message, className) {
+        const div = document.createElement('div');
+        div.className = className;
+
+        div.appendChild(document.createTextNode(message));
+
+        // Inser HTML
+        const searchDiv = document.querySelector('#search-events');
+        searchDiv.appendChild(div);
+    
+
+    setTimeout(() => {
+        this.removeMessage();
+    }, 3000);
+}
+    removeMessage() {
+        const alert = document.querySelector('.alert');
+        if(alert) {
+            alert.remove();
+        }
+    }
 }
