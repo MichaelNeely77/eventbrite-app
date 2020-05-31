@@ -12,6 +12,7 @@ document.getElementById('submitBtn').addEventListener('click', (e) => {
     // console.log(eventName + ' : '+ category);
     if(eventName != '') {
         // Query eventbrite API
+        eventbrite.queryAPI(eventName, category)
 
     } else {
         // Print a message
