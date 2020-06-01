@@ -5,8 +5,16 @@ class Eventbrite {
         this.orderby = 'date';
     }
     // Get events form API
-    async queryAPI(eventNamve, category) {
-        const eventResponse = await fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${eventName}sort_by=${this.orderby}&categories=101&token=${this.auth_token}`);
+    async queryAPI(eventName, category) {
+        const eventResponse = await fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${eventName}&sort_by=${this.orderby}&categories=${category}&token=${this.auth_token}`);
+
+        // Response
+        const events = await eventResponse.json();
+
+        return {
+            eventResponse
+        }
+
     }
 
 

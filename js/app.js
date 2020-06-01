@@ -13,6 +13,16 @@ document.getElementById('submitBtn').addEventListener('click', (e) => {
     if(eventName != '') {
         // Query eventbrite API
         eventbrite.queryAPI(eventName, category)
+            .then(events => {
+                const eventsList = events.events.events;
+                if(eventsList.length > 0) {
+                    // print the events
+                    ui.displayEvents(eventsList);
+                } else {
+                    // print the message
+                    ui.printMessage('No results found', 'text-center alert alert-danger mt-4');  
+                }
+            })
 
     } else {
         // Print a message
